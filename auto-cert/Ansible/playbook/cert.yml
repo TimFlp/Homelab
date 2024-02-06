@@ -1,0 +1,17 @@
+---
+- name: Deploiement des certificats SSL pour l'activation du HTTPS sur les services auto-heberges
+  hosts: serveurs
+  gather_facts: false
+  tasks:
+    - name: Verifie si le repertoire existe deja...
+      ansible.builtin.file:
+        path: "/etc/ssl/site.fr"
+        state: directory
+        mode: "0700"
+
+    - name: Transfert des nouveaux certificats
+      synchronize:
+        src: "/etc/ssl/certifs/archive/site.fr/"
+        dest: "/etc/ssl/site.fr/"
+        recursive: yes
+        delete: yes

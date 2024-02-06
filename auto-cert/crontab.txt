@@ -1,0 +1,2 @@
+# Pour lancer le script tout les 3 mois :
+0 3 8 Mar,Jun,Sep,Dec * bash /root/auto-cert.sh
