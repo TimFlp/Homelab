@@ -39,13 +39,16 @@ function generate_qr() {
     qrencode -t ANSI < /tmp/gen-client/wg.conf
 }
 
-function save_and_delete(){
+function save_and_delete() {
+    read -p "[!] Comment voulez-vous appeler votre profil Wireguard ? : " nom
     echo "[*] Sauvegarde du fichier de configuration client dans le répertoire home..."
-    mv /tmp/gen-client/wg.conf /$HOME/conf_client.conf
+    file_name=/$HOME/$nom
+    mv /tmp/gen-client/wg.conf $file_name
+    echo "[*] Fichier de configuration sauvegardé sous le nom : $file_name"
     echo "[*] Suppression des fichiers générés...."
     rm -rf /tmp/gen-client
     echo "[*] Tips : Pour générer le QRcode associé au fichier de configuration, on peut utiliser la commande suivante :"
-    echo "qrencode -t ANSI < /$HOME/conf_client.conf
+    echo "qrencode -t ANSI < $file_name"
 }
 
 echo "[*] Utilitaire de création de configuration client Wireguard"
