@@ -42,7 +42,7 @@ function generate_qr() {
 function save_and_delete() {
     read -p "[!] Comment voulez-vous appeler votre profil Wireguard ? : " nom
     echo "[*] Sauvegarde du fichier de configuration client dans le répertoire home..."
-    file_name=/$HOME/$nom
+    file_name= $HOME/$nom
     mv /tmp/gen-client/wg.conf $file_name
     echo "[*] Fichier de configuration sauvegardé sous le nom : $file_name"
     echo "[*] Suppression des fichiers générés...."
