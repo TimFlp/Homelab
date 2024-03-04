@@ -24,7 +24,7 @@ MTU = 1420
 
 [Peer]
 PublicKey = pubkey_serveur
-AllowedIPs = 0.0.0.0/0, 192.168.1.0/24, 10.0.0.0/8
+AllowedIPs = 0.0.0.0/0, 192.168.1.0/24, 10.0.0.0/8 # A MODIFIER SI BESOIN
 Endpoint = IP_BOX:VOTRE_PORT_WG  # A MODIFIER AVANT DE LANCER LE SCRIPT
 PersistentKeepalive = 1
 END
